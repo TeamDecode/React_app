@@ -9,31 +9,30 @@ const StudyBuddySearch = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setSearchQuery(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+  const { name, value } = e.target;
+  setSearchQuery(prevState => ({
+    ...prevState,
+    [name]: value
+  }));
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Assuming you have a state variable `searchQuery` holding your search parameters
     try {
-      // Replace with your actual API endpoint
-      const response = await fetch('/api/search-study-buddies', {
+      const response = await fetch('http://localhost:5000/api/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(searchQuery),
       });
-
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-
-      const data = await response.json();
-      console.log(data); // Process your search results as needed
+      const results = await response.json();
+      console.log(results); // Do something with the results
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
