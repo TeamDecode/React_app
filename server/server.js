@@ -35,3 +35,31 @@ app.post('/api/search', (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
+
+let calendarEvents = [];
+
+// Route to create a new event
+app.post('/api/events', (req, res) => {
+  const newEvent = { id: calendarEvents.length + 1, ...req.body };
+  calendarEvents.push(newEvent);
+  res.status(201).json(newEvent);
+});
+
+// Route to update an existing event
+app.put('/api/events/:id', (req, res) => {
+  const { id } = req.params;
+  const index = calendarEvents.findIndex(event => event.id === Number(id));
+  
+  if (index > -1) {
+    const updatedEvent = { ...calendarEvents[index], ...req.body };
+    calendarEvents[index] = updatedEvent;
+    res.status(200).json(updatedEvent);
+  } else {
+    res.status(404).json({ message: "Event not found" });
+  }
+});
+
+// Route to get all events
+app.get('/api/events', (req, res) => {
+  res.status(200).json(calendarEvents);
+});

@@ -40,3 +40,4 @@
 .read-the-docs {
   color: #888;
 }
+@import '~react-big-calendar/lib/css/react-big-calendar.css';
