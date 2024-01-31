@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 import React, { useState } from 'react';
 
 const UserProfile = () => {
@@ -16,7 +12,6 @@ const UserProfile = () => {
     setProfile({ ...profile, [e.target.name]: e.target.value });
   };
 
-<<<<<<< Updated upstream
   // Add 'async' here to make the function asynchronous
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,11 +31,6 @@ const UserProfile = () => {
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
-=======
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Submit profile data to backend
->>>>>>> Stashed changes
   };
 
   return (
@@ -50,7 +40,6 @@ const UserProfile = () => {
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
             Name
           </label>
-<<<<<<< Updated upstream
           <input 
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="name" 
@@ -60,22 +49,14 @@ const UserProfile = () => {
             value={profile.name} 
             onChange={handleChange}
           />
-=======
-          <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                 id="name" type="text" placeholder="Name" name="name" value={profile.name} onChange={handleChange}/>
->>>>>>> Stashed changes
         </div>
 
         {/* Repeat similar blocks for other fields like 'subjects' and 'studyTimes' */}
 
-<<<<<<< Updated upstream
         <button 
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
           type="submit"
         >
-=======
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
->>>>>>> Stashed changes
           Save Profile
         </button>
       </form>

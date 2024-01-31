@@ -9,7 +9,6 @@ const StudyBuddySearch = () => {
   });
 
   const handleChange = (e) => {
-<<<<<<< Updated upstream
   const { name, value } = e.target;
   setSearchQuery(prevState => ({
     ...prevState,
@@ -23,41 +22,17 @@ const StudyBuddySearch = () => {
     // Assuming you have a state variable `searchQuery` holding your search parameters
     try {
       const response = await fetch('http://localhost:5000/api/search', {
-=======
-    const { name, value } = e.target;
-    setSearchQuery(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Replace with your actual API endpoint
-      const response = await fetch('/api/search-study-buddies', {
->>>>>>> Stashed changes
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(searchQuery),
       });
-<<<<<<< Updated upstream
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const results = await response.json();
       console.log(results); // Do something with the results
-=======
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log(data); // Process your search results as needed
->>>>>>> Stashed changes
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }

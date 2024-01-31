@@ -1,42 +1,30 @@
 import React from 'react';
-<<<<<<< Updated upstream
-import UserProfile from './component/UserProfile'; // Update the path if necessary
-import StudyBuddySearch from './component/StudyBuddySearch'; // Update the path if necessary
-import MyCalendar from './component/MyCalendar';
-import EventForm from './component/EventForm';
-import './App.css';
-=======
-import './App.css';
-// Import your components
-import UserProfile from './component/UserProfile';
-import StudyBuddySearch from './component/StudyBuddySearch';
->>>>>>> Stashed changes
+import { Tabs, Tab } from './navabr/tabs';
 
-function App() {
-  return (
-    <div className="App">
-<<<<<<< Updated upstream
-      <UserProfile />
-      <StudyBuddySearch />
-	  <MyCalendar />
-	  <EventForm />
-      {/* ... other components */}
-=======
-      <header className="App-header">
-        {/* You can place a navigation bar here */}
-        <h1>Study Buddy App</h1>
-      </header>
-      <main>
-        <UserProfile />
-        <StudyBuddySearch />
-        {/* You will add more components like DiscussionForum, CalendarView, etc. here in the future */}
-      </main>
-      <footer>
-        {/* Footer content goes here */}
-      </footer>
->>>>>>> Stashed changes
-    </div>
-  );
-}
+import Home from './home/main.jsx'
+import Quiz from './quiz/main.jsx'
+import Events from './events/main.jsx'
+import Study from './study/main.jsx'
+
+const App = () => {
+	return (
+		<div>
+			<Tabs>
+				<Tab label=" home">
+					<Home />
+				</Tab>
+				<Tab label="emoji_events">
+					<Quiz />
+				</Tab>
+				<Tab label="school">
+					<Study />
+				</Tab>
+				<Tab label="event">
+					<Events />
+				</Tab>
+			</Tabs>
+		</div>
+	);
+};
 
 export default App;
